@@ -1,0 +1,17 @@
+{
+  "name": "marathonbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "image-to-base64": "^2.2.0",
+    "mongodb": "^4.1.0",
+    "telebot": "^1.4.1"
+  }
+}
