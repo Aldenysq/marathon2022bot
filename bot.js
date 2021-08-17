@@ -31,7 +31,7 @@ async function addTraining(msg) {
   let training = makeTraining(distance, timeSec, comment, date);
   db.addTraining(username, training);
   await msg.reply.text("нормально ебашишь, " + username + "!");
-  msg.reply.text("теперь скинь скрин тренировки");
+  await msg.reply.text("теперь скинь скрин тренировки");
   waitingTrainingScreen[username] = true;
 }
 async function allowedToAddTraining(msg){
@@ -189,8 +189,9 @@ async function photoReceived(msg) {
   let lastTraining = await db.getLastTrainings(username, 1);
   lastTraining = lastTraining[0];
   await db.insertFileIdToLastTraining(username, lastTraining, file_id);
-  msg.reply.text('тренировку записал, молодец!')
   waitingTrainingScreen[username] = false;
+  return msg.reply.text('тренировку записал, молодец!')
+  
 
 }
 bot.on('photo', photoReceived);
