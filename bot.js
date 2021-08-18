@@ -8,7 +8,7 @@ const db = require('./db');
 let waitingTrainingScreen = {};
 
 async function addTraining(msg) {
-  if (msg.chat.id != -452007312) {
+  if (msg.chat.type != 'supergroup') {
     return;
   }
   if (!(await allowedToAddTraining(msg))) {
