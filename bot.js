@@ -163,7 +163,7 @@ async function leaderboard(msg) {
     results.push([userDist, userTime, username]);
   }
   results = results.sort(function(a, b) {return b[0] - a[0];});
-  const awards = ["🥇", "🥈", "🥉"];
+  const awards = ["🥇", "🥈", "🥉", "🤦‍♂️"];
   let responseText = "";
   let awardIndex = 0;
   for (marathoner of results) {
@@ -171,7 +171,7 @@ async function leaderboard(msg) {
     const mins = Math.floor(marathoner[1] - hours * 60);
     responseText += awards[awardIndex] + " " + marathoner[2] + " пробежал " + marathoner[0] + " км за " + hours + " ч и " + mins + " мин\n";
     awardIndex += 1;
-    awardIndex %= 3;
+    awardIndex %= 4;
   }
   msg.reply.text(responseText);
 
