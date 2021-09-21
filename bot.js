@@ -163,7 +163,7 @@ async function leaderboard(msg) {
     results.push([userDist, userTime, username]);
   }
   results = results.sort(function(a, b) {return b[0] - a[0];});
-  const awards = ["🥇", "🥈", "🥉", "🤦‍♂️"];
+  const awards = ["🥇", "🥈", "🥉", "🐌🤦‍♂️"];
   let responseText = "";
   let awardIndex = 0;
   for (marathoner of results) {
